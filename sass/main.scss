@@ -46,7 +46,7 @@ body{
   @include square(66.2vmin,66.2vmin,#ffffff);
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 1.3vmin 1vmin 0px 0px #62473c;
+  box-shadow: 1.3vmin 1vmin 0 0 #62473c;
 
   &:before{
     @include pseudo;
