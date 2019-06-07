@@ -1,0 +1,477 @@
+// colors
+$bg-color: #785446;
+
+// mixins
+@mixin center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+@mixin pseudo($position: absolute, $content: "") {
+    content: $content;
+    position: $position;
+}
+
+@mixin square($width,$height,$background) {
+  width: $width;
+  height: $height;
+  background: $background;
+}
+
+@mixin bubble($width,$height,$top,$left) {
+  top: $top;
+  left: $left;
+  width: $width;
+  height: $height;  
+  background: #ebb684;
+  border-radius: 50%;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  background: $bg-color;
+  overflow: hidden;
+}
+
+.plate{
+  @include center;
+  @include square(66.2vmin,66.2vmin,#ffffff);
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 10px 8px 0px 0px #62473c;
+
+  &:before{
+    @include pseudo;
+    @include square(66.2vmin,66.2vmin,#f6f6f6);
+    left: 0.9vmin;
+    border-radius: 50%;
+  }
+
+  &:after{
+    @include pseudo;
+    @include center;
+    @include square(37.7vmin,37.7vmin,#f6f6f6);
+    top: 2.2vmin;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 2vmin #d2d4d3);
+  }
+
+  .bread{
+    @include center;
+    @include square(29.5vmin,20.5vmin,#efcba7);
+    z-index: 5;
+    top: 9.5vmin;
+    left: -4vmin;
+    transform: rotate(33deg);
+    border: 1vmin solid #d6874d;
+    border-radius: 20% 20% 10% 10%;
+    box-shadow: 1vmin 1.2vmin 0.7vmin rgba(0,0,0,0.3);
+  }
+
+  .bread-top{
+    @include center;
+    @include square(29vmin,15vmin,#efcba7);
+    z-index: 5;
+    top: -14vmin;
+    left: 11vmin;
+    transform: rotate(33deg);
+    border: 1vmin solid #d6874d;
+    border-radius: 50%;
+    box-shadow: 1vmin 0 0.7vmin rgba(0,0,0,0.3);
+
+    &:before{
+      @include pseudo;
+      @include square(20vmin,10vmin,#efcba7);
+      top: 10.85vmin;
+      left: 0.1vmin;
+      transform: rotate(10deg);
+      border-radius: 50%;
+    }    
+
+    &:after{
+      @include pseudo;
+      @include square(20vmin,10vmin,#efcba7);
+      top: 10.6vmin;
+      left: 9vmin;
+      transform: rotate(-10deg);
+      border-radius: 50%;
+    }
+  }
+
+  .bread-bubble{
+    @include center;
+    @include bubble(2.2vmin,2.2vmin,10vmin,-32vmin);
+    z-index: 5;
+
+    &:before{
+      @include pseudo;
+      left: 6vmin;
+      @include bubble(2.8vmin,2.8vmin,0,6vmin);
+    }    
+
+    &:after{
+      @include pseudo;
+      @include bubble(2.5vmin,2.5vmin,-8.5vmin,5vmin);
+    }
+
+    .bread-bubble-2{
+      position: absolute;
+      z-index: 3;
+      @include bubble(2.2vmin,2.2vmin,5.5vmin,12.5vmin);
+
+      &:before{
+        @include pseudo;
+        @include bubble(1.6vmin,1.6vmin,-2.9vmin,1.2vmin);
+      }       
+
+      &:after{
+        @include pseudo;
+        top: -8.5vmin;
+        left: 0.5vmin;
+        @include bubble(1.4vmin,1.4vmin,-8.5vmin,0.5vmin);
+      }  
+    }    
+
+    .bread-bubble-3{
+      position: absolute;
+      z-index: 3;
+      @include bubble(1.5vmin,1.5vmin,10.5vmin,16vmin);
+
+      &:before{
+        @include pseudo;
+        @include bubble(1vmin,1vmin,1.5vmin,5.4vmin);
+      }       
+
+      &:after{
+        @include pseudo;
+        @include bubble(0.5vmin,0.5vmin,-3vmin,4vmin);
+      }  
+    }    
+
+    .bread-bubble-4{
+      position: absolute;
+      z-index: 3;
+      @include bubble(0.7vmin,0.7vmin,6.5vmin,22vmin);
+
+      &:before{
+        @include pseudo;
+        @include bubble(1.4vmin,1.4vmin,-5vmin,-0.5vmin);
+      }       
+
+      &:after{
+        @include pseudo;
+        @include bubble(1.25vmin,1.25vmin,-8vmin,4vmin);
+      }  
+    }    
+
+    .bread-bubble-5{
+      position: absolute;
+      z-index: 3;
+      @include bubble(0.6vmin,0.6vmin,-5vmin,20vmin);
+
+      &:before{
+        @include pseudo;
+        @include bubble(1.4vmin,1.4vmin,-2vmin,-2.3vmin);
+      }       
+
+      &:after{
+        @include pseudo;
+        @include bubble(1.25vmin,1.25vmin,-2vmin,3vmin);
+      }  
+    }    
+
+    .bread-bubble-6{
+      position: absolute;
+      z-index: 3;
+      @include bubble(2.8vmin,4.5vmin,-16vmin,20vmin);
+
+      &:before{
+        @include pseudo;
+        @include bubble(1.7vmin,1.7vmin,-1.5vmin,-6.3vmin);
+      }       
+
+      &:after{
+        @include pseudo;
+        @include bubble(1.25vmin,1.25vmin,7.8vmin,10vmin);
+      }  
+    }   
+
+    .bread-bubble-7{
+      position: absolute;
+      z-index: 3;
+      @include bubble(1.4vmin,1.4vmin,-12.5vmin,12.5vmin);
+
+      &:before{
+        @include pseudo;
+        @include bubble(1vmin,1vmin,5vmin,-1vmin);
+      }       
+
+      &:after{
+        @include pseudo;
+        @include bubble(1.1vmin,1.1vmin,-0.2vmin,14vmin);
+      }  
+    }
+  }
+
+  .cheese{
+    @include center;
+    @include square(31vmin,29.5vmin,#fdbf00);
+    z-index: 2;
+    top: 4vmin;
+    left: 2.5vmin;
+    transform: rotate(50deg);
+  }  
+
+  .tuna{
+    @include center;
+    @include square(29.5vmin,28vmin,#fcc7a8);
+    z-index: 2;
+    top: 4vmin;
+    left: 2vmin;
+    transform: rotate(50deg);
+    border-radius: 10%;
+  }
+
+  .tomato{
+    @include center;
+    @include square(15.5vmin,15.5vmin,#ce050b);
+    overflow: hidden;
+    z-index: 3;
+    border-radius: 50%;
+    border: 1vmin solid #a40001;
+
+    .tomtato-inner{
+      @include center;
+      @include square(3.5vmin,10vmin,#fe020f);
+      top: -7.5vmin;
+      left: 5vmin;
+      transform: rotate(120deg);
+      border-radius: 50%;
+
+      &:before{
+        @include pseudo;
+        @include square(3vmin,11vmin,#fe020f);
+        top: -0.2vmin;
+        left: 4.5vmin;
+        border-radius: 50%;
+      }      
+
+      &:after{
+        @include pseudo;
+        @include square(3vmin,11vmin,#fe020f);
+        top: -0.2vmin;
+        left: 9vmin;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .tomato-left{
+      top: -15.8vmin;
+      left: -18vmin;
+  }  
+
+  .tomato-right{
+      top: 14.5vmin;
+      left: 18.5vmin;
+  }
+
+  .salad-right-top{
+    @include center;
+    @include square(2.6vmin,10vmin,#88b54f);
+    z-index: 3;
+    top: -9.3vmin;
+    left: 34vmin;
+    transform: rotate(90deg);
+    border-radius: 50vmin 10vmin 0 0;
+
+    &:before{
+      @include pseudo;
+      @include square(5vmin,10vmin,#88b54f);
+      left: 1.5vmin;
+      transform: rotate(20deg);
+      border-radius: 90% 20% 0 0;
+    }    
+
+    &:after{
+      @include pseudo;
+      @include square(2vmin,10vmin,#88b54f);
+      top: 1vmin;
+      left: 8vmin;
+      transform: rotate(10deg);
+      border-radius: 100% 20% 0 0;
+    }
+  }
+
+  .salad-left-top{
+    @include center;
+    @include square(2.5vmin,10vmin,#88b54f);
+    z-index: 3;
+    top: -32vmin;
+    left: -5vmin;
+    transform: rotate(-60deg);
+    border-radius: 5vmin 20vmin 0 0;
+
+    &:before{
+      @include pseudo;
+      @include square(4.2vmin,3vmin,#88b54f);
+      top: 4.5vmin;
+      left: 2vmin;
+      border-radius: 5vmin;
+      transform: rotate(15deg);
+    }    
+
+    &:after{
+      @include pseudo;
+      @include square(7vmin,3vmin,#88b54f);
+      top: 8vmin;
+      left: 1.2vmin;
+      border-radius: 10vmin 2vmin;
+      transform: rotate(45deg);
+    }
+  }
+
+  .salad-right-bottom{
+    @include center;
+    @include square(2vmin,10vmin,#88b54f);
+    z-index: 3;
+    top: 39.5vmin;
+    left: 1.8vmin;
+    transform: rotate(-30deg);
+    border-radius: 0 0 5vmin 5vmin;
+
+    &:before{
+      @include pseudo;
+      @include square(5vmin,8vmin,#88b54f);
+      top: 2.1vmin;
+      left: 1vmin;
+      border-radius: 0 0 0.5vmin 5vmin;
+      transform: rotate(20deg);
+    }
+    &:after{
+      @include pseudo;
+      @include square(5vmin,8vmin,#88b54f);
+      top: -0.3vmin;
+      left: 3vmin;
+      transform: rotate(35deg) skewX(40deg);
+    }
+  }  
+
+  .salad-right-bottom-2{
+    @include center;
+    @include square(5vmin,4vmin,#88b54f);
+    z-index: 2;
+    top: 33.5vmin;
+    left: 17vmin;
+    transform: rotate(5deg);
+    border-radius: 1vmin;
+
+    &:before{
+      @include pseudo;
+      @include square(5vmin,2vmin,#88b54f);
+      top: -0.1vmin;
+      left: 1.5vmin;
+      border-radius: 2vmin;
+    }
+  }
+
+  .salad-left-bottom{
+    @include center;
+    @include square(2vmin,5vmin,#88b54f);
+    z-index: 3;
+    top: 8.5vmin;
+    left: -38vmin;
+    transform: rotate(90deg);
+    border-radius: 0 0 5vmin 5vmin;
+
+    &:before{
+      @include pseudo;
+      @include square(3.5vmin,5vmin,#88b54f);
+      top: -0.5vmin;
+      left: -0.1vmin;
+      transform: rotate(-20deg);
+    }    
+
+    &:after{
+      @include pseudo;
+      @include square(2vmin,5vmin,#88b54f);
+      top: -1vmin;
+      left: 2.5vmin;
+      border-radius: 0 0 5vmin 5vmin;
+      transform: rotate(-35deg);
+    }
+  }
+
+  .cucumber{
+    @include center;
+    @include square(15.5vmin,15.5vmin,#bee7ca);
+    top: -4.8vmin;
+    left: -26vmin;
+    overflow: hidden;
+    z-index: 2;
+    border-radius: 50%;
+    border: 1vmin solid #8cdf9f;
+
+    &:before{
+      @include pseudo;
+      @include square(1.5vmin,1.5vmin,#a5c69f);
+      z-index: 2;
+      top: 9vmin;
+      left: 2vmin;
+      border-radius: 50%;
+    }    
+
+    &:after{
+      @include pseudo;
+      @include square(1.5vmin,1.5vmin,#a5c69f);
+      top: 5.1vmin;
+      left: 3vmin;
+      border-radius: 50%;
+    }
+
+    .cucumber-inner{
+      @include center;
+      @include square(3vmin,10vmin,#ffffff);
+      top: -8.2vmin;
+      left: 0.5vmin;
+      opacity: 0.5;
+      transform: rotate(110deg);
+      border-radius: 50%;
+
+      &:before{
+        @include pseudo;
+        @include square(3vmin,11vmin,#ffffff);
+        top: -0.8vmin;
+        left: 3.5vmin;
+        border-radius: 50%;
+      }      
+
+      &:after{
+        @include pseudo;
+        @include square(3vmin,11vmin,#ffffff);
+        top: -1vmin;
+        left: 7.5vmin;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .cucumber-right{
+    top: -8vmin;
+    left: 31.5vmin;
+    transform: scale(0.75) rotate(130deg);
+
+    &:after{
+      top: 2vmin;
+      left: 5vmin;
+    }
+  }
+}
